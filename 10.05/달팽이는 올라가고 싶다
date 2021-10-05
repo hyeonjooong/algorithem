@@ -1,0 +1,17 @@
+#10월 5일 백준 - 달팽이는 올라가고 싶다
+'''
+달팽이가 나무 막대를 모두 올라가려면, 며칠이 걸리는지 구하는 프로그램을 작성하시오.
+시간제한 때문에 반복문 사용 불가!!! -> A(n) - B(n-1) >= V 수식을 통해 프로그램 작성
+'''
+def snail(l):
+    a = int(l[0])
+    b = int(l[1])
+    c = int(l[2])
+    day = (c-b) // (a-b)
+    if day < (c-b) / (a-b):
+        return day + 1
+    return day
+    
+s = input()
+l = s.split()
+print(snail(l))
